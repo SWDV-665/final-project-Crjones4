@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+          <ion-title>To-do List</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+          <input type="text" [(ngModel)]="taskName" placeholder="Enter task"/>
+          <div class="item-note" item-end>
+             <button ion-button (click)="addTask()"><ion-icon name="add"></ion-icon></button>
+          </div>
+  </ion-item>
+  <ion-item *ngFor="let todo of taskList; let i = index">
+        {{todo}}
+        <div class="item-note" item-end>
+                <button ion-button clear (click)="updateTask(i)">
+                        <ion-icon name="create"></ion-icon>
+                </button>
+                <button ion-button clear (click)="deleteTask(i)">
+                        <ion-icon name="trash"></ion-icon>
+                </button>
+        </div>
+</ion-item>
+
+ 
+</ion-content>
